@@ -38,4 +38,30 @@ public class Trie {
         }
         current.endOfKey = true;
     }
+
+    public boolean contains(String key) {
+        TrieNode current = root;
+        for (int i = 0; i < key.length(); i++) {
+            char c = key.charAt(i);
+            TrieNode node = current.children.get(c);
+            if (node == null) {
+                return false;
+            }
+            current = node;
+        }
+        return current.endOfKey;
+    }
+
+    public boolean startsWith(String prefix) {
+        TrieNode current = root;
+        for (int i = 0; i < prefix.length(); i++) {
+            char c = prefix.charAt(i);
+            TrieNode node = current.children.get(c);
+            if (node == null) {
+                return false;
+            }
+            current = node;
+        }
+        return true;
+    }
 }
