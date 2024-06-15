@@ -8,6 +8,18 @@ import java.util.HashMap;
 * the trie could represent.
 *
 *
+* SPACE COMPLEXITY O(nk)
+* n -> number of keys stored in the trie
+* k -> average key length
+*
+* INSERTING TIME COMPLEXITY O(k)
+* k -> length of the key.
+*
+* TIME COMPLEXITY SEARCHING O(k)
+* k -> length of the key
+*
+* TIME COMPLEXITY CONTAINS O(p)
+* p -> prefix length
 * */
 public class Trie {
     private class TrieNode {
